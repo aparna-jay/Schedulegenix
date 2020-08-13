@@ -1,5 +1,6 @@
 package com.example.schedulegenix1;
 
+
 import androidx.appcompat.app.AppCompatActivity;
 import android.content.Context;
 import android.content.Intent;
@@ -20,16 +21,15 @@ import java.util.List;
 import android.os.Bundle;
 
 public class Schedule extends AppCompatActivity {
-    //public final static String EXTRA_MESSAGE = "MESSAGE";
-   // private ListView obj;
-   // DBHelper mydb;
+    public final static String EXTRA_MESSAGE = "MESSAGE";
+    private ListView obj;
+    DBHelper mydb;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_schedule);
-
-        /*mydb = new DBHelper(this);
+        mydb = new DBHelper(this);
         ArrayList array_list = mydb.getAllSchedules();
         ArrayAdapter arrayAdapter=new ArrayAdapter(this,android.R.layout.simple_list_item_1, array_list);
 
@@ -81,6 +81,5 @@ public class Schedule extends AppCompatActivity {
             moveTaskToBack(true);
         }
         return super.onKeyDown(keycode, event);
-    }*/
-}
+    }
 }
