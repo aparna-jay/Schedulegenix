@@ -12,6 +12,8 @@ import android.widget.Button;
 public class MainActivity extends AppCompatActivity {
 
     private Button schedule;
+    private Button units;
+
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -24,6 +26,13 @@ public class MainActivity extends AppCompatActivity {
                 ViewScheduleDetails();
             }
         });
+        units = findViewById(R.id.UnitConverter);
+        units.setOnClickListener(new View.OnClickListener(){
+            @Override
+            public void onClick(View v){
+                ViewUnitConverter();
+            }
+        });
 
     }
 
@@ -31,5 +40,11 @@ public class MainActivity extends AppCompatActivity {
         Intent intent = new Intent(MainActivity.this, Schedule.class);
         startActivity(intent);
     }
+
+    private void ViewUnitConverter(){
+        Intent intent = new Intent(MainActivity.this, UnitConverter.class);
+        startActivity(intent);
+    }
+
 
 }

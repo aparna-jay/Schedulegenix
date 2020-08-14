@@ -17,4 +17,5 @@
     <string name="SchedulesButton">Schedules</string>
     <string name="addSchedule">Add New</string>
     <string name="home">Back to Home</string>
+    <string name="uConvert">Unit Converter</string>
 </resources>
