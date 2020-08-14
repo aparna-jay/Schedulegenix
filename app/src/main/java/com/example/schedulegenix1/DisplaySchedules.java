@@ -16,7 +16,9 @@ import android.widget.Button;
 import android.widget.TextView;
 import android.widget.Toast;
 
-public class DisplaySchedules extends Activity {
+import androidx.appcompat.app.AppCompatActivity;
+
+public class DisplaySchedules extends AppCompatActivity {
     int from_Where_I_Am_Coming = 0;
     private DBHelper mydb ;
 
@@ -136,7 +138,7 @@ public class DisplaySchedules extends Activity {
                                 mydb.deleteSchedule(id_To_Update);
                                 Toast.makeText(getApplicationContext(), "Deleted Successfully",
                                         Toast.LENGTH_SHORT).show();
-                                Intent intent = new Intent(getApplicationContext(),MainActivity.class);
+                                Intent intent = new Intent(getApplicationContext(),Schedule.class);
                                 startActivity(intent);
                             }
                         })
@@ -166,7 +168,7 @@ public class DisplaySchedules extends Activity {
                         Date.getText().toString(), StartTime.getText().toString(),
                         EndTime.getText().toString(), Venue.getText().toString())){
                     Toast.makeText(getApplicationContext(), "Updated", Toast.LENGTH_SHORT).show();
-                    Intent intent = new Intent(getApplicationContext(),MainActivity.class);
+                    Intent intent = new Intent(getApplicationContext(),Schedule.class);
                     startActivity(intent);
                 } else{
                     Toast.makeText(getApplicationContext(), "not Updated", Toast.LENGTH_SHORT).show();
@@ -181,9 +183,11 @@ public class DisplaySchedules extends Activity {
                     Toast.makeText(getApplicationContext(), "not done",
                             Toast.LENGTH_SHORT).show();
                 }
-                Intent intent = new Intent(getApplicationContext(),MainActivity.class);
+                Intent intent = new Intent(getApplicationContext(),Schedule.class);
                 startActivity(intent);
             }
         }
     }
+
+
 }
