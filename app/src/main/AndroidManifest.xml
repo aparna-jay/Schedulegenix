@@ -12,6 +12,9 @@
         <activity android:name=".Kg_lb"></activity>
         <activity android:name=".UnitConverter" />
         <activity android:name=".DisplaySchedules" />
+        <activity android:name=".DisplayContactStore"></activity>
+        <activity android:name=".Contact" />
+        <activity android:name=".DBHelper" />
         <activity android:name=".Schedule" />
         <activity android:name=".MainActivity">
             <intent-filter>
