@@ -9,7 +9,10 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
-        <activity android:name=".Schedule"></activity>
+        <activity android:name=".Card"></activity>
+        <activity android:name=".DBHelper" />
+        <activity android:name=".DisplayCardInformation" />
+        <activity android:name=".Schedule" />
         <activity android:name=".MainActivity">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
