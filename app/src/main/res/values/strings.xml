@@ -18,4 +18,11 @@
     <string name="addSchedule">Add New</string>
     <string name="home">Back to Home</string>
     <string name="uConvert">Unit Converter</string>
+    <string name="ContactsButton">Contacts</string>
+    <string name="PersonalButton">Personal Information</string>
+    <string name="CardsButton">Credit Cards</string>
+    <string name="Masses">Kilogram - Pound</string>
+    <string name="kg">In Kilogram</string>
+    <string name="ConvertButton">Convert</string>
+    <string name="lb">In Pound</string>
 </resources>

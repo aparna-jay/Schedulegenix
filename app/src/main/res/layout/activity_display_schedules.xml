@@ -7,7 +7,7 @@
     tools:context=".DisplaySchedules">
     <RelativeLayout
         android:layout_width="match_parent"
-        android:layout_height="370dp"
+        android:layout_height="480dp"
         >
 
         <TextView
@@ -17,7 +17,6 @@
             android:layout_alignBottom="@+id/editTextTitle"
             android:layout_alignParentLeft="true"
             android:layout_marginLeft="32dp"
-            android:layout_marginBottom="-3dp"
             android:text="@string/title"
             android:textAppearance="?android:attr/textAppearanceMedium" />
 
@@ -27,10 +26,9 @@
             android:layout_height="wrap_content"
             android:layout_alignLeft="@+id/textView1"
             android:layout_alignBottom="@+id/editTextDate"
-            android:layout_marginLeft="0dp"
-            android:layout_marginBottom="28dp"
             android:text="@string/date"
             android:textAppearance="?android:attr/textAppearanceMedium" />
+
 
         <TextView
             android:id="@+id/textView3"
@@ -38,8 +36,10 @@
             android:layout_height="wrap_content"
             android:layout_alignLeft="@+id/textView2"
             android:layout_alignBottom="@+id/editTextStartTime"
-            android:layout_marginLeft="0dp"
-            android:layout_marginBottom="26dp"
+            android:layout_alignParentTop="true"
+            android:layout_marginLeft="4dp"
+            android:layout_marginTop="222dp"
+            android:layout_marginBottom="-62dp"
             android:text="@string/starttime"
             android:textAppearance="?android:attr/textAppearanceMedium" />
 
@@ -47,10 +47,10 @@
             android:id="@+id/textView4"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_above="@+id/editTextEndTime"
             android:layout_alignLeft="@+id/textView3"
-            android:layout_marginLeft="-2dp"
-            android:layout_marginBottom="-29dp"
+            android:layout_alignParentTop="true"
+            android:layout_marginLeft="0dp"
+            android:layout_marginTop="159dp"
             android:text="@string/endtime"
             android:textAppearance="?android:attr/textAppearanceMedium" />
 
@@ -58,18 +58,19 @@
             android:id="@+id/textView5"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_alignBottom="@+id/editTextVenue"
             android:layout_alignLeft="@+id/textView4"
+            android:layout_alignBottom="@+id/editTextVenue"
+            android:layout_marginLeft="1dp"
+            android:layout_marginBottom="2dp"
             android:text="@string/venue"
             android:textAppearance="?android:attr/textAppearanceMedium" />
-
 
         <EditText
             android:id="@+id/editTextTitle"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_alignParentLeft="true"
-            android:layout_marginLeft="164dp"
+            android:layout_marginLeft="170dp"
             android:layout_marginTop="5dp"
             android:ems="10"
             android:inputType="text"></EditText>
@@ -80,8 +81,8 @@
             android:layout_height="wrap_content"
             android:layout_below="@+id/editTextTitle"
             android:layout_alignLeft="@+id/editTextTitle"
-            android:layout_marginLeft="15dp"
-            android:layout_marginTop="40dp"
+            android:layout_marginLeft="1dp"
+            android:layout_marginTop="21dp"
             android:ems="10"
             android:inputType="text" />
 
@@ -99,10 +100,11 @@
             android:id="@+id/editTextEndTime"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_alignLeft="@+id/editTextStartTime"
             android:layout_below="@+id/editTextStartTime"
+            android:layout_alignLeft="@+id/editTextStartTime"
+            android:layout_marginTop="21dp"
             android:ems="10"
-            android:inputType="text" >
+            android:inputType="text">
 
             <requestFocus />
         </EditText>
@@ -111,8 +113,9 @@
             android:id="@+id/editTextVenue"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_alignLeft="@+id/editTextEndTime"
             android:layout_below="@+id/editTextEndTime"
+            android:layout_alignLeft="@+id/editTextEndTime"
+            android:layout_marginTop="21dp"
             android:ems="10"
             android:inputType="phone|text" />
 
@@ -124,8 +127,12 @@
             android:layout_alignParentBottom="true"
             android:layout_marginLeft="-8dp"
             android:layout_marginBottom="18dp"
+            android:paddingLeft="25dp"
+            android:paddingRight="25dp"
+            android:background="@color/colorPrimary"
             android:onClick="run"
-            android:text="@string/save" />
+            android:text="@string/save"
+            android:textColor="@android:color/background_light" />
 
     </RelativeLayout>
 
