@@ -95,17 +95,22 @@
 
         <Button
             android:id="@+id/button1"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
+            android:layout_width="112dp"
+            android:layout_height="66dp"
             android:layout_alignLeft="@+id/editTextEmail"
+            android:layout_alignParentEnd="true"
+            android:layout_alignParentRight="true"
             android:layout_alignParentBottom="true"
             android:layout_marginLeft="55dp"
-            android:layout_marginBottom="26dp"
+            android:layout_marginEnd="158dp"
+            android:layout_marginRight="158dp"
+            android:layout_marginBottom="0dp"
+            android:background="@color/colorPrimary"
             android:onClick="run"
             android:text="save"
-            android:textColor="@color/colorPrimary"
-            android:textColorHighlight="@color/colorPrimary"
-            android:textColorLink="@color/colorPrimary"
+            android:textColor="@android:color/background_dark"
+            android:textColorHighlight="@android:color/background_dark"
+            android:textColorLink="@android:color/background_dark"
             android:textCursorDrawable="@drawable/add" />
 
         <requestFocus/>

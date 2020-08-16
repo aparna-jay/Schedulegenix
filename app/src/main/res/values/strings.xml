@@ -34,7 +34,6 @@
     <string name="CardsButton">Credit Cards</string>
 
 
-
     <string name="edit">Edit Contact</string>
 
     <string name="delete">Delete Contact</string>
@@ -52,6 +51,9 @@
     <string name="save">Save </string>
 
     <string name="deleteDrug">Are you sure, you want to delete it.</string>
+
+    <string name="mycontacts">My Contacts</string>
+    <string name="backtohome">BACK TO HOME</string>
 
 
 </resources>
