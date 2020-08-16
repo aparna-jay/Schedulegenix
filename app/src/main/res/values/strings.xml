@@ -22,6 +22,9 @@
     <string name="PersonalButton">Personal Information</string>
     <string name="CardsButton">Credit Cards</string>
     <string name="Masses">Kilogram - Pound</string>
+    <string name="Liter">Liter  - Gallon</string>
+    <string name="Temperature">Fahrenheit - Celsius</string>
+    <string name="Length">cm - inch</string>
     <string name="kg">In Kilogram</string>
     <string name="ConvertButton">Convert</string>
     <string name="lb">In Pound</string>

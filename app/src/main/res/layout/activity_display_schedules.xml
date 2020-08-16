@@ -37,9 +37,9 @@
             android:layout_alignLeft="@+id/textView2"
             android:layout_alignBottom="@+id/editTextStartTime"
             android:layout_alignParentTop="true"
-            android:layout_marginLeft="4dp"
-            android:layout_marginTop="222dp"
-            android:layout_marginBottom="-62dp"
+            android:layout_marginLeft="2dp"
+            android:layout_marginTop="163dp"
+            android:layout_marginBottom="-1dp"
             android:text="@string/starttime"
             android:textAppearance="?android:attr/textAppearanceMedium" />
 
@@ -49,8 +49,8 @@
             android:layout_height="wrap_content"
             android:layout_alignLeft="@+id/textView3"
             android:layout_alignParentTop="true"
-            android:layout_marginLeft="0dp"
-            android:layout_marginTop="159dp"
+            android:layout_marginLeft="3dp"
+            android:layout_marginTop="226dp"
             android:text="@string/endtime"
             android:textAppearance="?android:attr/textAppearanceMedium" />
 
@@ -117,7 +117,7 @@
             android:layout_alignLeft="@+id/editTextEndTime"
             android:layout_marginTop="21dp"
             android:ems="10"
-            android:inputType="phone|text" />
+            android:inputType="text" />
 
         <Button
             android:id="@+id/button1"

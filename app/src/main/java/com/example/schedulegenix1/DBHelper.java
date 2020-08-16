@@ -13,7 +13,7 @@ import java.util.HashMap;
 
 public class DBHelper extends SQLiteOpenHelper {
 
-    public static final String DATABASE_NAME = "Aparna.db";
+    public static final String DATABASE_NAME = "Schedulegenix.db";
     public static final String SCHEDULES_TABLE_NAME = "schedules";
     public static final String SCHEDULES_COLUMN_ID = "id";
     public static final String SCHEDULES_COLUMN_TITLE = "title";
