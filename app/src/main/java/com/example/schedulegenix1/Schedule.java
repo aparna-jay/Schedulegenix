@@ -32,7 +32,7 @@ public class Schedule extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_schedule);
         mydb = new DBHelper(this);
-        ArrayList array_list = mydb.getAllSchedules();
+        ArrayList array_list = mydb.getAllInformation();
         ArrayAdapter arrayAdapter=new ArrayAdapter(this,android.R.layout.simple_list_item_1, array_list);
 
         obj = (ListView)findViewById(R.id.listView1);
@@ -46,7 +46,7 @@ public class Schedule extends AppCompatActivity {
                 Bundle dataBundle = new Bundle();
                 dataBundle.putInt("id", id_To_Search);
 
-                Intent intent = new Intent(getApplicationContext(),DisplaySchedules.class);
+                Intent intent = new Intent(getApplicationContext(),DisplayCardInformation.class);
 
                 intent.putExtras(dataBundle);
                 startActivity(intent);
@@ -76,7 +76,7 @@ public class Schedule extends AppCompatActivity {
             case R.id.item1:Bundle dataBundle = new Bundle();
                 dataBundle.putInt("id", 0);
 
-                Intent intent = new Intent(getApplicationContext(),DisplaySchedules.class);
+                Intent intent = new Intent(getApplicationContext(),DisplayCardInformation.class);
                 intent.putExtras(dataBundle);
 
                 startActivity(intent);

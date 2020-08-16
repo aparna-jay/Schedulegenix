@@ -1,43 +1,39 @@
 package com.example.schedulegenix1;
 
-import android.os.Bundle;
 import android.app.Activity;
 import android.app.AlertDialog;
-
 import android.content.DialogInterface;
 import android.content.Intent;
 import android.database.Cursor;
-
+import android.os.Bundle;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
-
 import android.widget.Button;
 import android.widget.TextView;
 import android.widget.Toast;
 
 import androidx.appcompat.app.AppCompatActivity;
 
-public class DisplaySchedules extends AppCompatActivity {
+
+public class DisplayCardInformation extends AppCompatActivity {
     int from_Where_I_Am_Coming = 0;
     private DBHelper mydb ;
 
-    TextView Title ;
-    TextView Date;
-    TextView StartTime;
-    TextView EndTime;
-    TextView Venue;
+    TextView name ;
+    TextView type;
+    TextView number;
+    TextView date;
     int id_To_Update = 0;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_display_schedules);
-        Title = (TextView) findViewById(R.id.editTextTitle);
-        Date = (TextView) findViewById(R.id.editTextDate);
-        StartTime = (TextView) findViewById(R.id.editTextStartTime);
-        EndTime = (TextView) findViewById(R.id.editTextEndTime);
-        Venue = (TextView) findViewById(R.id.editTextVenue);
+        setContentView(R.layout.activity_display_card_information);
+        name = (TextView) findViewById(R.id.editTextName);
+        type = (TextView) findViewById(R.id.editTextType);
+        number = (TextView) findViewById(R.id.editTextNumber);
+        date = (TextView) findViewById(R.id.editTextDate);
 
         mydb = new DBHelper(this);
 
@@ -51,11 +47,11 @@ public class DisplaySchedules extends AppCompatActivity {
                 id_To_Update = Value;
                 rs.moveToFirst();
 
-                String Titl = rs.getString(rs.getColumnIndex(DBHelper.SCHEDULES_COLUMN_TITLE));
-                String Dat = rs.getString(rs.getColumnIndex(DBHelper.SCHEDULES_COLUMN_DATE));
-                String StartTim = rs.getString(rs.getColumnIndex(DBHelper.SCHEDULES_COLUMN_STARTTIME));
-                String EndTim = rs.getString(rs.getColumnIndex(DBHelper.SCHEDULES_COLUMN_ENDTIME));
-                String Venu = rs.getString(rs.getColumnIndex(DBHelper.SCHEDULES_COLUMN_VENUE));
+                String nam = rs.getString(rs.getColumnIndex(DBHelper.CARD_INFORMATION_COLUMN_NAME));
+                String typ = rs.getString(rs.getColumnIndex(DBHelper.CARD_INFORMATION_COLUMN_TYPE));
+                String numbe = rs.getString(rs.getColumnIndex(DBHelper.CARD_INFORMATION_COLUMN_NUMBER));
+                String dat = rs.getString(rs.getColumnIndex(DBHelper.CARD_INFORMATION_COLUMN_DATE));
+
 
                 if (!rs.isClosed())  {
                     rs.close();
@@ -63,25 +59,22 @@ public class DisplaySchedules extends AppCompatActivity {
                 Button b = (Button)findViewById(R.id.button1);
                 b.setVisibility(View.INVISIBLE);
 
-                Title.setText((CharSequence)Titl);
-                Title.setFocusable(false);
-                Title.setClickable(false);
+                name.setText((CharSequence)nam);
+                name.setFocusable(false);
+                name.setClickable(false);
 
-                Date.setText((CharSequence)Dat);
-                Date.setFocusable(false);
-                Date.setClickable(false);
+                type.setText((CharSequence)typ);
+                type.setFocusable(false);
+                type.setClickable(false);
 
-                StartTime.setText((CharSequence)StartTim);
-                StartTime.setFocusable(false);
-                StartTime.setClickable(false);
+                number.setText((CharSequence)numbe);
+                number.setFocusable(false);
+                number.setClickable(false);
 
-                EndTime.setText((CharSequence)EndTim);
-                EndTime.setFocusable(false);
-                EndTime.setClickable(false);
+                date.setText((CharSequence)dat);
+                date.setFocusable(false);
+                date.setClickable(false);
 
-                Venue.setText((CharSequence)Venu);
-                Venue.setFocusable(false);
-                Venue.setClickable(false);
             }
         }
     }
@@ -94,7 +87,7 @@ public class DisplaySchedules extends AppCompatActivity {
         if(extras !=null) {
             int Value = extras.getInt("id");
             if(Value>0){
-                getMenuInflater().inflate(R.menu.display_schedule, menu);
+                getMenuInflater().inflate(R.menu.display_card_information, menu);
             } else{
                 getMenuInflater().inflate(R.menu.main_menu, menu);
             }
@@ -105,40 +98,36 @@ public class DisplaySchedules extends AppCompatActivity {
     public boolean onOptionsItemSelected(MenuItem item) {
         super.onOptionsItemSelected(item);
         switch(item.getItemId()) {
-            case R.id.Edit_Schedule:
+            case R.id.Edit_Information:
                 Button b = (Button)findViewById(R.id.button1);
                 b.setVisibility(View.VISIBLE);
-                Title.setEnabled(true);
-                Title.setFocusableInTouchMode(true);
-                Title.setClickable(true);
+                name.setEnabled(true);
+                name.setFocusableInTouchMode(true);
+                name.setClickable(true);
 
-                Date.setEnabled(true);
-                Date.setFocusableInTouchMode(true);
-                Date.setClickable(true);
+                type.setEnabled(true);
+                type.setFocusableInTouchMode(true);
+                type.setClickable(true);
 
-                StartTime.setEnabled(true);
-                StartTime.setFocusableInTouchMode(true);
-                StartTime.setClickable(true);
+                number.setEnabled(true);
+                number.setFocusableInTouchMode(true);
+                number.setClickable(true);
 
-                EndTime.setEnabled(true);
-                EndTime.setFocusableInTouchMode(true);
-                EndTime.setClickable(true);
-
-                Venue.setEnabled(true);
-                Venue.setFocusableInTouchMode(true);
-                Venue.setClickable(true);
+                date.setEnabled(true);
+                date.setFocusableInTouchMode(true);
+                date.setClickable(true);
 
                 return true;
-            case R.id.Delete_Schedule:
+            case R.id.Delete_Information:
 
                 AlertDialog.Builder builder = new AlertDialog.Builder(this);
-                builder.setMessage(R.string.deleteSchedule)
+                builder.setMessage(R.string.deleteInformation)
                         .setPositiveButton(R.string.yes, new DialogInterface.OnClickListener() {
                             public void onClick(DialogInterface dialog, int id) {
-                                mydb.deleteSchedule(id_To_Update);
+                                mydb.deleteInformation(id_To_Update);
                                 Toast.makeText(getApplicationContext(), "Deleted Successfully",
                                         Toast.LENGTH_SHORT).show();
-                                Intent intent = new Intent(getApplicationContext(),Schedule.class);
+                                Intent intent = new Intent(getApplicationContext(),MainActivity.class);
                                 startActivity(intent);
                             }
                         })
@@ -164,30 +153,28 @@ public class DisplaySchedules extends AppCompatActivity {
         if(extras !=null) {
             int Value = extras.getInt("id");
             if(Value>0){
-                if(mydb.updateSchedule(id_To_Update,Title.getText().toString(),
-                        Date.getText().toString(), StartTime.getText().toString(),
-                        EndTime.getText().toString(), Venue.getText().toString())){
+                if(mydb.updateinformation(id_To_Update,name.getText().toString(),
+                        type.getText().toString(), number.getText().toString(),
+                        date.getText().toString())){
                     Toast.makeText(getApplicationContext(), "Updated", Toast.LENGTH_SHORT).show();
-                    Intent intent = new Intent(getApplicationContext(),Schedule.class);
+                    Intent intent = new Intent(getApplicationContext(),MainActivity.class);
                     startActivity(intent);
                 } else{
                     Toast.makeText(getApplicationContext(), "not Updated", Toast.LENGTH_SHORT).show();
                 }
             } else{
-                if(mydb.insertSchedule(Title.getText().toString(), Date.getText().toString(),
-                        StartTime.getText().toString(), EndTime.getText().toString(),
-                        Venue.getText().toString())){
+                if(mydb.insertinformation(name.getText().toString(), type.getText().toString(),
+                        number.getText().toString(), date.getText().toString())){
                     Toast.makeText(getApplicationContext(), "done",
                             Toast.LENGTH_SHORT).show();
                 } else{
                     Toast.makeText(getApplicationContext(), "not done",
                             Toast.LENGTH_SHORT).show();
                 }
-                Intent intent = new Intent(getApplicationContext(),Schedule.class);
+                Intent intent = new Intent(getApplicationContext(),MainActivity.class);
                 startActivity(intent);
             }
         }
     }
-
-
 }
+

@@ -17,7 +17,7 @@ public class UnitConverter extends AppCompatActivity {
         mass.setOnClickListener(new View.OnClickListener(){
             @Override
             public void onClick(View v){
-                Intent intent = new Intent(UnitConverter.this, Kg_lb.class);
+                Intent intent = new Intent(UnitConverter.this, Cm_inch.class);
                 startActivity(intent);
             }
         });

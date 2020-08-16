@@ -9,7 +9,8 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
-        <activity android:name=".Kg_lb"></activity>
+        <activity android:name=".Cm_inch"></activity>
+        <activity android:name=".DisplayCardInformation" />
         <activity android:name=".UnitConverter" />
         <activity android:name=".DisplaySchedules" />
         <activity android:name=".Schedule" />

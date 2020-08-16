@@ -4,13 +4,14 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".Kg_lb">
+    tools:context=".Cm_inch">
+
 
     <TextView
         android:id="@+id/CMassTitle"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="@string/Masses"
+        android:text="@string/masses"
         android:textColor="@color/colorPrimary"
         android:textSize="30sp"
         app:layout_constraintBottom_toBottomOf="parent"
@@ -20,10 +21,10 @@
         app:layout_constraintVertical_bias="0.133" />
 
     <TextView
-        android:id="@+id/kg"
+        android:id="@+id/Cm"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="@string/kg"
+        android:text="@string/Cm"
         android:textSize="24sp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
@@ -48,7 +49,7 @@
         app:layout_constraintVertical_bias="0.363" />
 
     <Button
-        android:id="@+id/convertTokg"
+        android:id="@+id/convertToCm"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:background="@color/colorPrimary"
@@ -63,7 +64,7 @@
         app:layout_constraintVertical_bias="0.642" />
 
     <EditText
-        android:id="@+id/InputinKG"
+        android:id="@+id/InputinCm"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:ems="10"
@@ -77,7 +78,7 @@
         app:layout_constraintVertical_bias="0.252" />
 
     <EditText
-        android:id="@+id/Inputinlb"
+        android:id="@+id/Inputinlnch"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:ems="10"
@@ -90,10 +91,10 @@
         app:layout_constraintVertical_bias="0.533" />
 
     <TextView
-        android:id="@+id/pound"
+        android:id="@+id/Inch"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="@string/lb"
+        android:text="@string/Lb"
         android:textSize="24sp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
@@ -103,10 +104,10 @@
         app:layout_constraintVertical_bias="0.542" />
 
     <TextView
-        android:id="@+id/AnswerInkg"
+        android:id="@+id/AnswerInCm"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="Answer in kg"
+        android:text="Answer in Cm"
         android:textSize="24sp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
@@ -116,10 +117,10 @@
         app:layout_constraintVertical_bias="0.737" />
 
     <TextView
-        android:id="@+id/answerInlb"
+        android:id="@+id/answerInInch"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="Answer in lb"
+        android:text="Answer in inch"
         android:textSize="24sp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
