@@ -1,5 +1,6 @@
 package com.example.schedulegenix1;
 
+
 import androidx.appcompat.app.AppCompatActivity;
 import android.content.Context;
 import android.content.Intent;
@@ -13,6 +14,7 @@ import android.view.View;
 import android.widget.AdapterView;
 import android.widget.ArrayAdapter;
 import android.widget.AdapterView.OnItemClickListener;
+import android.widget.Button;
 import android.widget.ListView;
 
 import java.util.ArrayList;
@@ -20,16 +22,16 @@ import java.util.List;
 import android.os.Bundle;
 
 public class Schedule extends AppCompatActivity {
-    //public final static String EXTRA_MESSAGE = "MESSAGE";
-   // private ListView obj;
-   // DBHelper mydb;
+    public final static String EXTRA_MESSAGE = "MESSAGE";
+    private ListView obj;
+    DBHelper mydb;
+    private Button home;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_schedule);
-
-        /*mydb = new DBHelper(this);
+        mydb = new DBHelper(this);
         ArrayList array_list = mydb.getAllSchedules();
         ArrayAdapter arrayAdapter=new ArrayAdapter(this,android.R.layout.simple_list_item_1, array_list);
 
@@ -48,6 +50,14 @@ public class Schedule extends AppCompatActivity {
 
                 intent.putExtras(dataBundle);
                 startActivity(intent);
+            }
+        });
+
+        home = findViewById(R.id.btn_back_home);
+        home.setOnClickListener(new View.OnClickListener(){
+            @Override
+            public void onClick(View v){
+                BackToHome();
             }
         });
     }
@@ -81,6 +91,10 @@ public class Schedule extends AppCompatActivity {
             moveTaskToBack(true);
         }
         return super.onKeyDown(keycode, event);
-    }*/
-}
+    }
+
+    private void BackToHome(){
+        Intent intent = new Intent(Schedule.this, MainActivity.class);
+        startActivity(intent);
+    }
 }
