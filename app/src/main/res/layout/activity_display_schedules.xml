@@ -131,7 +131,7 @@
             android:paddingRight="25dp"
             android:background="@color/colorPrimary"
             android:onClick="run"
-            android:text="@string/save"
+            android:text="@string/saveSchedule"
             android:textColor="@android:color/background_light" />
 
     </RelativeLayout>
