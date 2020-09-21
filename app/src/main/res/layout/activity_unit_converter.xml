@@ -13,7 +13,7 @@
         android:layout_height="wrap_content"
         android:layout_marginLeft="16dp"
         android:layout_marginRight="16dp"
-        android:background="@color/shade3"
+        android:background="@color/shade4"
         android:text="@string/Temperature"
         android:textColor="@android:color/background_light"
         android:textColorHint="@android:color/darker_gray"

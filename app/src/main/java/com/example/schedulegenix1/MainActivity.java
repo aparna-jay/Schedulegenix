@@ -29,10 +29,10 @@ public class MainActivity extends AppCompatActivity {
         });
         units = findViewById(R.id.UnitConverter);
         units.setOnClickListener(new View.OnClickListener(){
-            @Override
-            public void onClick(View v){
-                ViewUnitConverter();
-            }
+                @Override
+                public void onClick(View v){
+                    ViewUnitConverter();
+                }
         });
 
     }
