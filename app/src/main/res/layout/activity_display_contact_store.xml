@@ -111,7 +111,7 @@
             android:textColor="@android:color/background_dark"
             android:textColorHighlight="@android:color/background_dark"
             android:textColorLink="@android:color/background_dark"
-            android:textCursorDrawable="@drawable/add" />
+            />
 
         <requestFocus/>
 
