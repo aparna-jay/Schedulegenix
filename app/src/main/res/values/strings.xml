@@ -55,18 +55,15 @@
 
     <string name="mycontacts">My Contacts</string>
     <string name="backtohome">BACK TO HOME</string>
-
     <string name="editPersonal">Edit Personal</string>
     <string name="deletePersonal">Delete Personal</string>
     <string name="title_activity_display_personal_store">DisplayPersonal</string>
-
+    <string name="birthday">Birthday</string>
     <string name="nic">Nic</string>
     <string name="bAddress">Business Address</string>
-    <string name="pCode">Post Code</string>
     <string name="bPhoneNum">Business Phone Number</string>
-    <string name="mPassportNum">Mobile Passport Number</string>
-    <string name="tFileNum">Tax File Number</string>
-    <string name="carRegNum">Car Registation Number</string>
+    <string name="mPassportNum">Passport Number</string>
+    <string name="bloodGroup">Blood Group</string>
     <string name="savePersonal">Save personal</string>
     <string name="deletePersonalmessage">Are you sure, you want to delete it.</string>
 

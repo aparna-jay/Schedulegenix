@@ -13,7 +13,7 @@ import java.util.HashMap;
 
 public class DBHelper extends SQLiteOpenHelper {
 
-    public static final String DATABASE_NAME = "Schedulegenix.db";
+    public static final String DATABASE_NAME = "Schedulegenix1.db";
     public static final String SCHEDULES_TABLE_NAME = "schedules";
     public static final String SCHEDULES_COLUMN_ID = "id";
     public static final String SCHEDULES_COLUMN_TITLE = "title";
@@ -34,15 +34,16 @@ public class DBHelper extends SQLiteOpenHelper {
     public static final String PERSONAL_TABLE_NAME = "personal";
     public static final String PERSONAL_STORE_COLUMN_ID = "id";
     public static final String PERSONAL_STORE_COLUMN_NAME= "name";
-    public static final String PERSONAL_STORE_COLUMN_ADDRESS = "address";
+    public static final String PERSONAL_STORE_COLUMN_BIRTHDAY = "birthday";
     public static final String PERSONAL_STORE_COLUMN_NIC = "nic";
     public static final String PERSONAL_STORE_COLUMN_BUSINESS_ADDRESS = "bAddress";
-    public static final String PERSONAL_STORE_COLUMN_POST_CODE = "pCode";
     public static final String PERSONAL_STORE_COLUMN_BUSINESS_PHONE_NUM = "bPhoneNum";
     public static final String PERSONAL_STORE_COLUMN_MOBILE_PASSPORT_NUM = "mPassportNum";
     public static final String PERSONAL_STORE_COLUMN_TAX_FILE_NUM = "tFileNum";
     public static final String PERSONAL_STORE_COLUMN_CAR_REG_NUM = "carRegNum";
+    public static final String PERSONAL_STORE_COLUMN_BLOOD_GROUP = "bloodGroup";
     private HashMap hp;
+
 
     public DBHelper(Context context) {
         super(context, DATABASE_NAME , null, 1);
@@ -63,7 +64,7 @@ public class DBHelper extends SQLiteOpenHelper {
         );
         db.execSQL(
                 "create table personal " +
-                        "(id integer primary key, name text,address text,nic text, bAddress text, pCode text, bPhoneNum text, mPassportNum text, tFileNum text, carRegNum text)"
+                        "(id integer primary key, name text,birthday text,nic text, bAddress text,  bPhoneNum text, mPassportNum text, bloodGroup text)"
         );
     }
 
@@ -214,18 +215,16 @@ public class DBHelper extends SQLiteOpenHelper {
 
 
 
-    public boolean insertPersonal (String name, String address, String nic, String bAddress, String pCode, String bPhoneNum, String mPassportNum, String tFileNum, String carRegNum) {
+    public boolean insertPersonal (String name, String birthday, String nic, String bAddress, String bPhoneNum, String mPassportNum, String bloodGroup) {
         SQLiteDatabase db = this.getWritableDatabase();
         ContentValues contentValues = new ContentValues();
         contentValues.put("name", name);
-        contentValues.put("address", address);
+        contentValues.put("birthday", birthday);
         contentValues.put("nic", nic);
         contentValues.put("bAddress", bAddress);
-        contentValues.put("pCode",pCode);
         contentValues.put("bPhoneNum",bPhoneNum);
         contentValues.put("mPassportNum",mPassportNum);
-        contentValues.put("tFileNum", tFileNum);
-        contentValues.put("carRegNum", carRegNum);
+        contentValues.put("bloodGroup", bloodGroup);
         db.insert("personal", null, contentValues);
         return true;
     }
@@ -242,18 +241,16 @@ public class DBHelper extends SQLiteOpenHelper {
         return numRows;
     }
 
-    public boolean updatePersonal (Integer id,String name, String address , String nic , String bAddress, String pCode, String bPhoneNum, String mPassportNum, String tFileNum, String carRegNum) {
+    public boolean updatePersonal (Integer id,String name, String birthday , String nic , String bAddress,  String bPhoneNum, String mPassportNum, String bloodGroup) {
         SQLiteDatabase db = this.getWritableDatabase();
         ContentValues contentValues = new ContentValues();
         contentValues.put("name", name);
-        contentValues.put("address", address);
+        contentValues.put("birthday", birthday);
         contentValues.put("nic", nic);
         contentValues.put("bAddress", bAddress);
-        contentValues.put("pCode", pCode);
         contentValues.put("bPhoneNum", bPhoneNum);
         contentValues.put("mPassportNum",mPassportNum);
-        contentValues.put("tFileNum",tFileNum);
-        contentValues.put("carRegNum", carRegNum);
+        contentValues.put("bloodGroup", bloodGroup);
         db.update("personal", contentValues, "id = ? ", new String[] { Integer.toString(id) } );
         return true;
     }
