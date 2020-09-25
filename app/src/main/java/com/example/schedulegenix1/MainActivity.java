@@ -12,7 +12,9 @@ import android.widget.ImageButton;
 
 public class MainActivity extends AppCompatActivity {
 
-    private ImageButton schedule, contacts, personal;
+
+    private ImageButton schedule, contacts, personal, Card;
+
     private Button units;
 
 
@@ -49,10 +51,16 @@ public class MainActivity extends AppCompatActivity {
                 public void onClick(View v) {
                     ViewUnitConverter();
                 }
+
                 });
 
-
-
+        Card = findViewById(R.id.Card);
+        Card.setOnClickListener(new View.OnClickListener(){
+            @Override
+            public void onClick(View v){
+                ViewCard();
+            }
+        });
 
 
     }
@@ -79,6 +87,10 @@ public class MainActivity extends AppCompatActivity {
         startActivity(intent);
     }
 
+    private void ViewCard(){
+        Intent intent = new Intent(MainActivity.this, MainActivityCard.class);
+        startActivity(intent);
+    }
 
 
 }

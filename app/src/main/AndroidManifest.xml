@@ -13,6 +13,8 @@
         </activity>
         <activity android:name=".PersonalInfo" />
         <activity android:name=".DisplayPersonalData" />
+        <activity android:name=".MainActivityCard"></activity>
+        <activity android:name=".DisplayCardInformation" />
         <activity android:name=".Kg_lb" />
         <activity android:name=".UnitConverter" />
         <activity android:name=".unit_temp" />

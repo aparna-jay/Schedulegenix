@@ -34,7 +34,6 @@
     <string name="PersonalButton">Personal Information</string>
     <string name="CardsButton">Credit Cards</string>
 
-
     <string name="edit">Edit Contact</string>
 
     <string name="delete">Delete Contact</string>
@@ -71,5 +70,13 @@
     <string name="gallonAnswer">Answer in gallon</string>
     <string name="AnswerinLiter">Answer in Liter</string>
 
+    <string name="Bankname">Bank name</string>
+    <string name="brands">Card type</string>
+    <string name="usage">Card number</string>
+    <string name="sideEffects">Expiry date</string>
+    <string name="Card_Information">Card information</string>
+    <string name="edit_Information">Edit Information</string>
+    <string name="delete_Information">Delete Information</string>
+    <string name="SaveCard">Save</string>
 
 </resources>
