@@ -1,6 +1,5 @@
 package com.example.schedulegenix1;
 
-
 import android.content.ContentValues;
 import android.content.Context;
 import android.database.Cursor;
@@ -10,6 +9,7 @@ import android.database.sqlite.SQLiteOpenHelper;
 
 import java.util.ArrayList;
 import java.util.HashMap;
+
 
 public class DBHelper extends SQLiteOpenHelper {
 
@@ -21,6 +21,14 @@ public class DBHelper extends SQLiteOpenHelper {
     public static final String SCHEDULES_COLUMN_STARTTIME = "starttime";
     public static final String SCHEDULES_COLUMN_ENDTIME = "endtime";
     public static final String SCHEDULES_COLUMN_VENUE = "venue";
+
+    public static final String CONTACTS_TABLE_NAME = "contacts";
+    public static final String CONTACT_STORE_COLUMN_ID = "id";
+    public static final String CONTACT_STORE_COLUMN_NAME = "name";
+    public static final String CONTACT_STORE_COLUMN_PHONE = "phone";
+    public static final String CONTACT_STORE_COLUMN_ADDRESS = "address";
+    public static final String CONTACT_STORE_COLUMN_EMAIL = "email";
+
     private HashMap hp;
 
     public DBHelper(Context context) {
@@ -31,15 +39,23 @@ public class DBHelper extends SQLiteOpenHelper {
     public void onCreate(SQLiteDatabase db) {
         // TODO Auto-generated method stub
         db.execSQL(
+                "create table contacts " +
+                        "(id integer primary key, name text,phone text,address text, email text)"
+
+        );   db.execSQL(
                 "create table schedules " +
                         "(id integer primary key, title text,date text,starttime text, endtime text,venue text)"
+
         );
     }
 
     @Override
     public void onUpgrade(SQLiteDatabase db, int oldVersion, int newVersion) {
         // TODO Auto-generated method stub
+
         db.execSQL("DROP TABLE IF EXISTS schedules");
+        onCreate(db);
+        db.execSQL("DROP TABLE IF EXISTS contacts");
         onCreate(db);
     }
 
@@ -53,17 +69,48 @@ public class DBHelper extends SQLiteOpenHelper {
         contentValues.put("venue", venue);
         db.insert("schedules", null, contentValues);
         return true;
+
+    }
+
+    public boolean insertContact (String name, String phone, String address, String email) {
+        SQLiteDatabase db = this.getWritableDatabase();
+        ContentValues contentValues = new ContentValues();
+        contentValues.put("name", name);
+        contentValues.put("phone", phone);
+        contentValues.put("address", address);
+        contentValues.put("email",email);
+        db.insert("contacts", null, contentValues);
+        return true;
     }
 
     public Cursor getData(int id) {
         SQLiteDatabase db = this.getReadableDatabase();
+
         Cursor res =  db.rawQuery( "select * from schedules where id="+id+"", null );
+
+
+
+        return res;
+    }
+    public Cursor getData1(int id) {
+        SQLiteDatabase db = this.getReadableDatabase();
+
+
+
+        Cursor res =  db.rawQuery( "select * from contacts where id="+id+"", null );
+
         return res;
     }
 
     public int numberOfRows(){
         SQLiteDatabase db = this.getReadableDatabase();
+
         int numRows = (int) DatabaseUtils.queryNumEntries(db, SCHEDULES_TABLE_NAME);
+        return numRows;
+    }
+    public int numberOfRows1(){
+        SQLiteDatabase db = this.getReadableDatabase();
+        int numRows = (int) DatabaseUtils.queryNumEntries(db, CONTACTS_TABLE_NAME);
         return numRows;
     }
 
@@ -81,10 +128,30 @@ public class DBHelper extends SQLiteOpenHelper {
 
     public Integer deleteSchedule (Integer id) {
         SQLiteDatabase db = this.getWritableDatabase();
-        return db.delete("schedules",
+        return db.delete("schedules","id = ? ",
+                new String[] { Integer.toString(id) });
+
+
+    }
+
+    public boolean updateContact (Integer id, String name, String phone, String address , String email) {
+        SQLiteDatabase db = this.getWritableDatabase();
+        ContentValues contentValues = new ContentValues();
+        contentValues.put("name", name);
+        contentValues.put("phone", phone);
+        contentValues.put("address", address);
+        contentValues.put("email", email);
+        db.update("contacts", contentValues, "id = ? ", new String[] { Integer.toString(id) } );
+        return true;
+    }
+
+    public Integer deleteContact (Integer id) {
+        SQLiteDatabase db = this.getWritableDatabase();
+        return db.delete("contacts",
                 "id = ? ",
                 new String[] { Integer.toString(id) });
     }
+
 
     public ArrayList<String> getAllSchedules() {
         ArrayList<String> array_list = new ArrayList<String>();
@@ -100,4 +167,24 @@ public class DBHelper extends SQLiteOpenHelper {
         }
         return array_list;
     }
+
+
+    public ArrayList<String> getAllContacts() {
+
+        ArrayList<String> array_list = new ArrayList<String>();
+
+        //hp = new HashMap();
+        SQLiteDatabase db = this.getReadableDatabase();
+
+        Cursor res =  db.rawQuery( "select * from contacts", null );
+        res.moveToFirst();
+
+        while(res.isAfterLast() == false){
+            array_list.add(res.getString(res.getColumnIndex(CONTACT_STORE_COLUMN_NAME)));
+
+            res.moveToNext();
+        }
+        return array_list;
+    }
 }
+
