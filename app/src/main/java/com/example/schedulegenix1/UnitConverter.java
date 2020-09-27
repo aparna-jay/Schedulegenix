@@ -8,7 +8,7 @@ import android.view.View;
 import android.widget.Button;
 
 public class UnitConverter extends AppCompatActivity {
-    Button mass;
+    Button mass, temp;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -18,6 +18,14 @@ public class UnitConverter extends AppCompatActivity {
             @Override
             public void onClick(View v){
                 Intent intent = new Intent(UnitConverter.this, Kg_lb.class);
+                startActivity(intent);
+            }
+        });
+        temp = findViewById(R.id.TemperatureButton);
+        temp.setOnClickListener(new View.OnClickListener(){
+            @Override
+            public void onClick(View v){
+                Intent intent = new Intent(UnitConverter.this, unit_temp.class);
                 startActivity(intent);
             }
         });

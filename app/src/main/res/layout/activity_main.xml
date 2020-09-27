@@ -84,7 +84,7 @@
         app:srcCompat="@drawable/crd" />
 
     <ImageButton
-        android:id="@+id/imageButton5"
+        android:id="@+id/btn_contacts"
         android:layout_width="140dp"
         android:layout_height="150dp"
         android:layout_marginStart="60dp"

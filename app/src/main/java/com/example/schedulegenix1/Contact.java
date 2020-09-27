@@ -26,8 +26,9 @@ public class Contact extends AppCompatActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_main);
+        setContentView(R.layout.activity_contact);
         mydb = new DBHelper(this);
+        mydb.getReadableDatabase();
         ArrayList array_list = mydb.getAllContacts();
         ArrayAdapter arrayAdapter=new ArrayAdapter(this,android.R.layout.simple_list_item_1, array_list);
 
