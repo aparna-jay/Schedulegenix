@@ -42,7 +42,8 @@ public class DBHelper extends SQLiteOpenHelper {
                 "create table contacts " +
                         "(id integer primary key, name text,phone text,address text, email text)"
 
-        );   db.execSQL(
+        );
+        db.execSQL(
                 "create table schedules " +
                         "(id integer primary key, title text,date text,starttime text, endtime text,venue text)"
 
