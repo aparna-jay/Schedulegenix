@@ -79,4 +79,7 @@
     <string name="delete_Information">Delete Information</string>
     <string name="SaveCard">Save</string>
 
+    <string name="cm">In Cm</string>
+    <string name="inch">In Inch</string>
+
 </resources>
