@@ -9,8 +9,13 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
-        <activity android:name=".Kg_lb"></activity>
+        <activity android:name=".Litte_Gallon">
+        </activity>
+        <activity android:name=".PersonalInfo" />
+        <activity android:name=".DisplayPersonalData" />
+        <activity android:name=".Kg_lb" />
         <activity android:name=".UnitConverter" />
+        <activity android:name=".unit_temp" />
         <activity android:name=".DisplaySchedules" />
         <activity android:name=".DisplayContactStore"></activity>
         <activity android:name=".Contact" />

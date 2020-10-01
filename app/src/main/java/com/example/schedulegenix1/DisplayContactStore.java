@@ -44,7 +44,7 @@ public class DisplayContactStore extends AppCompatActivity {
 
             if (Value > 0) {
                 //means this is the view part not the add contact part.
-                Cursor rs = mydb.getData(Value);
+                Cursor rs = mydb.getData1(Value);
                 id_To_Update = Value;
                 rs.moveToFirst();
 
