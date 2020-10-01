@@ -15,6 +15,7 @@
         <activity android:name=".DisplayPersonalData" />
         <activity android:name=".Kg_lb" />
         <activity android:name=".UnitConverter" />
+        <activity android:name=".unit_temp" />
         <activity android:name=".DisplaySchedules" />
         <activity android:name=".DisplayContactStore"></activity>
         <activity android:name=".Contact" />
