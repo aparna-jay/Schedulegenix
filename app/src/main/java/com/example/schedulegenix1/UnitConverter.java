@@ -9,7 +9,8 @@ import android.widget.Button;
 
 public class UnitConverter extends AppCompatActivity {
 
-    Button mass, temp,liter;
+
+    Button mass, temp,liter, length;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -23,6 +24,7 @@ public class UnitConverter extends AppCompatActivity {
                 startActivity(intent);
             }
         });
+
 
         temp = findViewById(R.id.TemperatureButton);
         temp.setOnClickListener(new View.OnClickListener(){
@@ -39,6 +41,16 @@ public class UnitConverter extends AppCompatActivity {
             @Override
             public void onClick(View v){
                 Intent intent = new Intent(UnitConverter.this, Litte_Gallon.class);
+                startActivity(intent);
+            }
+        });
+
+
+        length = findViewById(R.id.LengthButton);
+        length.setOnClickListener(new View.OnClickListener(){
+            @Override
+            public void onClick(View v){
+                Intent intent = new Intent(UnitConverter.this, CmInchConverter.class);
 
                 startActivity(intent);
             }

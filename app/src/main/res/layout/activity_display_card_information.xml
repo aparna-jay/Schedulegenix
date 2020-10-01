@@ -1,0 +1,114 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    tools:context=".DisplayCardInformation">
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="370dp"
+        >
+
+        <TextView
+            android:id="@+id/textView1"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignBottom="@+id/editTextName"
+            android:layout_alignParentLeft="true"
+            android:layout_marginLeft="25dp"
+            android:layout_marginBottom="-14dp"
+            android:text="@string/Bankname"
+            android:textAppearance="?android:attr/textAppearanceMedium" />
+
+        <TextView
+            android:id="@+id/textView2"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignBottom="@+id/editTextType"
+            android:layout_alignLeft="@+id/textView1"
+            android:text="@string/brands"
+            android:textAppearance="?android:attr/textAppearanceMedium" />
+
+        <TextView
+            android:id="@+id/textView3"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignBottom="@+id/editTextNumber"
+            android:layout_alignLeft="@+id/textView2"
+            android:text="@string/usage"
+            android:textAppearance="?android:attr/textAppearanceMedium" />
+
+        <TextView
+            android:id="@+id/textView4"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignBottom="@+id/editTextDate"
+            android:layout_alignLeft="@+id/textView3"
+            android:text="@string/sideEffects"
+            android:textAppearance="?android:attr/textAppearanceMedium" />
+
+
+        <EditText
+            android:id="@+id/editTextName"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentLeft="true"
+            android:layout_marginLeft="130dp"
+            android:layout_marginTop="10dp"
+            android:ems="10"
+            android:inputType="text"></EditText>
+
+        <EditText
+            android:id="@+id/editTextType"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/editTextName"
+            android:layout_alignLeft="@+id/editTextName"
+            android:layout_marginLeft="0dp"
+            android:layout_marginTop="30dp"
+            android:ems="10"
+            android:inputType="text" />
+
+
+        <EditText
+            android:id="@+id/editTextNumber"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/editTextType"
+            android:layout_alignRight="@+id/editTextType"
+
+            android:layout_marginTop="30dp"
+            android:ems="10"
+            android:inputType="text" />
+
+        <EditText
+            android:id="@+id/editTextDate"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/editTextNumber"
+            android:layout_alignLeft="@+id/editTextNumber"
+            android:layout_marginTop="30dp"
+            android:ems="10"
+            android:inputType="text"></EditText>
+
+        <Button
+            android:id="@+id/button1"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignLeft="@+id/editTextDate"
+            android:layout_alignParentBottom="true"
+            android:layout_marginBottom="28dp"
+            android:background="@color/shade5"
+            android:onClick="run"
+            android:text="@string/SaveCard"
+            android:textColor="@color/background" />
+
+        <requestFocus />
+
+
+
+    </RelativeLayout>
+
+
+</ScrollView>

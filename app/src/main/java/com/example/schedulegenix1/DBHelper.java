@@ -42,6 +42,14 @@ public class DBHelper extends SQLiteOpenHelper {
     public static final String PERSONAL_STORE_COLUMN_TAX_FILE_NUM = "tFileNum";
     public static final String PERSONAL_STORE_COLUMN_CAR_REG_NUM = "carRegNum";
     public static final String PERSONAL_STORE_COLUMN_BLOOD_GROUP = "bloodGroup";
+
+    public static final String CARD_INFORMATION_TABLE_NAME = "card_information";
+    public static final String CARD_INFORMATION_COLUMN_ID = "id";
+    public static final String CARD_INFORMATION_COLUMN_NAME = "name";
+    public static final String CARD_INFORMATION_COLUMN_TYPE = "type";
+    public static final String CARD_INFORMATION_COLUMN_NUMBER = "number";
+    public static final String CARD_INFORMATION_COLUMN_DATE = "date";
+
     private HashMap hp;
 
 
@@ -66,6 +74,10 @@ public class DBHelper extends SQLiteOpenHelper {
                 "create table personal " +
                         "(id integer primary key, name text,birthday text,nic text, bAddress text,  bPhoneNum text, mPassportNum text, bloodGroup text)"
         );
+        db.execSQL(
+                "create table card_information " +
+                        "(id integer primary key, name text,type text, number text, date text)"
+        );
     }
 
     @Override
@@ -79,6 +91,10 @@ public class DBHelper extends SQLiteOpenHelper {
         onCreate(db);
 
         db.execSQL("DROP TABLE IF EXISTS personal");
+        onCreate(db);
+
+        db.execSQL("DROP TABLE IF EXISTS card_information");
+
         onCreate(db);
     }
 
@@ -194,6 +210,7 @@ public class DBHelper extends SQLiteOpenHelper {
 
 
 
+
     public ArrayList<String> getAllContacts() {
         ArrayList<String> array_list = new ArrayList<String>();
         //hp = new HashMap();
@@ -262,6 +279,49 @@ public class DBHelper extends SQLiteOpenHelper {
                 new String[] { Integer.toString(id) });
     }
 
+    public boolean insertinformation( String name, String type, String number, String date) {
+        SQLiteDatabase db = this.getWritableDatabase();
+        ContentValues contentValues = new ContentValues();
+        contentValues.put("name", name);
+        contentValues.put("type", type);
+        contentValues.put("number", number);
+        contentValues.put("date", date);
+        db.insert("card_information", null, contentValues);
+        return true;
+    }
+
+    public Cursor getCardData(int id) {
+        SQLiteDatabase db = this.getReadableDatabase();
+        Cursor res =  db.rawQuery( "select * from card_information where id="+id+"", null );
+        return res;
+    }
+
+    public int numberOfCardRows(){
+        SQLiteDatabase db = this.getReadableDatabase();
+        int numRows = (int) DatabaseUtils.queryNumEntries(db, CARD_INFORMATION_TABLE_NAME);
+        return numRows;
+    }
+
+    public boolean updateinformation(Integer id, String name, String type, String number, String date) {
+        SQLiteDatabase db = this.getWritableDatabase();
+        ContentValues contentValues = new ContentValues();
+        contentValues.put("name", name);
+        contentValues.put("type", type);
+        contentValues.put("number", number);
+        contentValues.put("date", date);
+        db.update("card_information", contentValues, "id = ? ", new String[] { Integer.toString(id) } );
+        return true;
+    }
+
+    public Integer deleteInformation (Integer id) {
+        SQLiteDatabase db = this.getWritableDatabase();
+        return db.delete("card_information",
+
+                "id = ? ",
+                new String[] { Integer.toString(id) });
+    }
+
+
     public ArrayList<String> getAllData() {
         ArrayList<String> array_list = new ArrayList<String>();
         //hp = new HashMap();
@@ -274,5 +334,22 @@ public class DBHelper extends SQLiteOpenHelper {
         }
         return array_list;
     }
+
+    public ArrayList<String> getAllInformation() {
+        ArrayList<String> array_list = new ArrayList<String>();
+
+        //hp = new HashMap();
+        SQLiteDatabase db = this.getReadableDatabase();
+        Cursor res =  db.rawQuery( "select * from card_information", null );
+        res.moveToFirst();
+
+        while(res.isAfterLast() == false){
+            array_list.add(res.getString(res.getColumnIndex(CARD_INFORMATION_COLUMN_NAME)));
+
+            res.moveToNext();
+        }
+        return array_list;
+    }
+
 }
 
