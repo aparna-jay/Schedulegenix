@@ -66,6 +66,10 @@
     <string name="bloodGroup">Blood Group</string>
     <string name="savePersonal">Save personal</string>
     <string name="deletePersonalmessage">Are you sure, you want to delete it.</string>
+    <string name="l">in litre</string>
+    <string name="Gallon">In gallon</string>
+    <string name="gallonAnswer">Answer in gallon</string>
+    <string name="AnswerinLiter">Answer in Liter</string>
 
 
 </resources>
