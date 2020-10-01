@@ -3,8 +3,8 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
-    android:layout_height="wrap_content"
-    android:background="@drawable/w6"
+    android:layout_height="match_parent"
+    android:background="@drawable/w14"
     tools:context=".DisplayPersonalData">
 
     <RelativeLayout
@@ -20,7 +20,7 @@
             android:text="@string/name"
             android:textAppearance="?android:attr/textAppearanceMedium"
             android:textColor="@android:color/black"
-            android:textStyle="bold"/>
+            android:textStyle="bold" />
 
         <TextView
             android:id="@+id/textView2"
@@ -31,7 +31,7 @@
             android:text="@string/birthday"
             android:textAppearance="?android:attr/textAppearanceMedium"
             android:textColor="@android:color/black"
-            android:textStyle="bold"/>
+            android:textStyle="bold" />
 
         <TextView
             android:id="@+id/textView3"
@@ -42,7 +42,7 @@
             android:text="@string/nic"
             android:textAppearance="?android:attr/textAppearanceMedium"
             android:textColor="@android:color/black"
-            android:textStyle="bold"/>
+            android:textStyle="bold" />
 
         <TextView
             android:id="@+id/textView4"
@@ -53,7 +53,7 @@
             android:text="@string/bAddress"
             android:textAppearance="?android:attr/textAppearanceMedium"
             android:textColor="@android:color/black"
-            android:textStyle="bold"/>
+            android:textStyle="bold" />
 
 
         <TextView
@@ -80,7 +80,7 @@
             android:text="@string/mPassportNum"
             android:textAppearance="?android:attr/textAppearanceMedium"
             android:textColor="@android:color/black"
-            android:textStyle="bold"/>
+            android:textStyle="bold" />
 
         <TextView
             android:id="@+id/textView8"
@@ -93,7 +93,7 @@
             android:text="@string/bloodGroup"
             android:textAppearance="?android:attr/textAppearanceMedium"
             android:textColor="@android:color/black"
-            android:textStyle="bold"/>
+            android:textStyle="bold" />
 
         <EditText
             android:id="@+id/editTextName"
@@ -119,7 +119,7 @@
             android:ems="10"
             android:inputType="text"
             android:textColor="@android:color/black"
-            android:textStyle="bold"/>
+            android:textStyle="bold" />
 
         <EditText
             android:id="@+id/editTextNic"
@@ -131,7 +131,7 @@
             android:ems="10"
             android:inputType="text"
             android:textColor="@android:color/black"
-            android:textStyle="bold"/>
+            android:textStyle="bold" />
 
         <EditText
             android:id="@+id/editTextBaddress"
@@ -199,7 +199,7 @@
             android:layout_marginEnd="125dp"
             android:layout_marginRight="125dp"
             android:layout_marginBottom="1dp"
-            android:background="@color/shade4"
+            android:background="@color/shade5"
             android:onClick="run"
             android:paddingLeft="25dp"
             android:paddingRight="25dp"

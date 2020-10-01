@@ -4,7 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="@drawable/w11"
+    android:background="@drawable/w14"
     tools:context=".Kg_lb">
 
     <TextView
@@ -12,61 +12,64 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="@string/Masses"
-        android:textColor="@color/shade2"
+        android:textColor="@android:color/black"
         android:textSize="30sp"
         android:textStyle="bold"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.497"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.133" />
+        app:layout_constraintVertical_bias="0.05" />
 
     <TextView
         android:id="@+id/kg"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="@string/kg"
+        android:textColor="@android:color/black"
         android:textSize="24sp"
+        android:textStyle="bold"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.113"
+        app:layout_constraintHorizontal_bias="0.055"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.266"
-        android:textStyle="bold"/>
+        app:layout_constraintVertical_bias="0.158" />
 
     <Button
         android:id="@+id/ConvertTolb"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:background="@color/colorPrimary"
+        android:background="@color/shade5"
         android:onClick="convertTolb"
         android:text="@string/ConvertButton"
         android:textColor="@android:color/background_light"
         android:textColorHint="@android:color/darker_gray"
+        android:textColorLink="@color/shade5"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.424"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.363"
-        />
+        app:layout_constraintVertical_bias="0.241" />
 
     <Button
         android:id="@+id/convertTokg"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:background="@color/colorPrimary"
+        android:background="@color/shade5"
         android:onClick="convertTokg"
         android:text="@string/ConvertButton"
         android:textColor="@android:color/background_light"
         android:textColorHint="@android:color/darker_gray"
+        android:textColorLink="@color/shade5"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.424"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.642" />
+        app:layout_constraintVertical_bias="0.569" />
 
     <EditText
         android:id="@+id/InputinKG"
@@ -75,13 +78,13 @@
         android:ems="10"
         android:inputType="numberDecimal"
         android:textSize="18sp"
+        android:textStyle="bold"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.87"
+        app:layout_constraintHorizontal_bias="0.82"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.252"
-        android:textStyle="bold"/>
+        app:layout_constraintVertical_bias="0.141" />
 
     <EditText
         android:id="@+id/Inputinlb"
@@ -89,55 +92,58 @@
         android:layout_height="wrap_content"
         android:ems="10"
         android:inputType="numberDecimal"
+        android:textStyle="bold"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.875"
+        app:layout_constraintHorizontal_bias="0.791"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.533"
-        android:textStyle="bold"/>
+        app:layout_constraintVertical_bias="0.446" />
 
     <TextView
         android:id="@+id/pound"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="@string/lb"
+        android:textColor="@android:color/black"
         android:textSize="24sp"
+        android:textStyle="bold"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.104"
+        app:layout_constraintHorizontal_bias="0.05"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.542"
-        android:textStyle="bold"/>
+        app:layout_constraintVertical_bias="0.456" />
 
     <TextView
         android:id="@+id/AnswerInkg"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="Answer in kg"
+        android:textColor="@android:color/black"
         android:textSize="24sp"
+        android:textStyle="bold"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.427"
+        app:layout_constraintHorizontal_bias="0.058"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.737"
-        android:textStyle="bold"/>
+        app:layout_constraintVertical_bias="0.635" />
 
     <TextView
         android:id="@+id/answerInlb"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="Answer in lb"
+        android:textColor="@android:color/black"
         android:textSize="24sp"
+        android:textStyle="bold"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.427"
+        app:layout_constraintHorizontal_bias="0.057"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.464"
-        android:textStyle="bold"/>
+        app:layout_constraintVertical_bias="0.346" />
 
 
 </androidx.constraintlayout.widget.ConstraintLayout>

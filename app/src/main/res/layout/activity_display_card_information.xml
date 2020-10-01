@@ -3,13 +3,13 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
-    android:layout_height="wrap_content"
-    android:background="@drawable/w7"
+    android:layout_height="match_parent"
+    android:background="@drawable/w14"
     tools:context=".DisplayCardInformation">
 
     <RelativeLayout
         android:layout_width="match_parent"
-        android:layout_height="370dp">
+        android:layout_height="360dp">
 
         <TextView
             android:id="@+id/textView1"
@@ -22,7 +22,7 @@
             android:text="@string/Bankname"
             android:textAppearance="?android:attr/textAppearanceMedium"
             android:textColor="@android:color/black"
-            android:textStyle="bold"/>
+            android:textStyle="bold" />
 
         <TextView
             android:id="@+id/textView2"
@@ -33,7 +33,7 @@
             android:text="@string/brands"
             android:textAppearance="?android:attr/textAppearanceMedium"
             android:textColor="@android:color/black"
-            android:textStyle="bold"/>
+            android:textStyle="bold" />
 
         <TextView
             android:id="@+id/textView3"
@@ -44,7 +44,7 @@
             android:text="@string/usage"
             android:textAppearance="?android:attr/textAppearanceMedium"
             android:textColor="@android:color/black"
-            android:textStyle="bold"/>
+            android:textStyle="bold" />
 
         <TextView
             android:id="@+id/textView4"
@@ -55,7 +55,7 @@
             android:text="@string/sideEffects"
             android:textAppearance="?android:attr/textAppearanceMedium"
             android:textColor="@android:color/black"
-            android:textStyle="bold"/>
+            android:textStyle="bold" />
 
 
         <EditText
@@ -81,7 +81,7 @@
             android:ems="10"
             android:inputType="text"
             android:textColor="@android:color/black"
-            android:textStyle="bold"/>
+            android:textStyle="bold" />
 
 
         <EditText
@@ -91,11 +91,11 @@
             android:layout_below="@+id/editTextType"
             android:layout_alignRight="@+id/editTextType"
 
-            android:layout_marginTop="30dp"
+            android:layout_marginTop="22dp"
             android:ems="10"
             android:inputType="text"
             android:textColor="@android:color/black"
-            android:textStyle="bold"/>
+            android:textStyle="bold" />
 
         <EditText
             android:id="@+id/editTextDate"
@@ -103,25 +103,38 @@
             android:layout_height="wrap_content"
             android:layout_below="@+id/editTextNumber"
             android:layout_alignLeft="@+id/editTextNumber"
-            android:layout_marginTop="30dp"
+            android:layout_marginLeft="6dp"
+            android:layout_marginTop="19dp"
             android:ems="10"
             android:inputType="text"
             android:textColor="@android:color/black"
-            android:textStyle="bold"></EditText>
+            android:textStyle="bold">
+
+            <requestFocus />
+        </EditText>
 
         <Button
             android:id="@+id/button1"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_alignLeft="@+id/editTextDate"
+            android:layout_alignParentStart="true"
+            android:layout_alignParentLeft="true"
+            android:layout_alignParentTop="true"
+            android:layout_alignParentEnd="true"
+            android:layout_alignParentRight="true"
             android:layout_alignParentBottom="true"
-            android:layout_marginBottom="28dp"
-            android:background="@color/shade4"
+            android:layout_marginStart="116dp"
+            android:layout_marginLeft="116dp"
+            android:layout_marginTop="303dp"
+            android:layout_marginEnd="138dp"
+            android:layout_marginRight="138dp"
+            android:layout_marginBottom="202dp"
+            android:background="@color/shade5"
             android:onClick="run"
-            android:text="@string/SaveCard"
-            android:textColor="@color/background" />
-
-        <requestFocus />
+            android:paddingLeft="25dp"
+            android:paddingRight="25dp"
+            android:text="@string/save"
+            android:textColor="@android:color/background_light" />
 
 
     </RelativeLayout>
