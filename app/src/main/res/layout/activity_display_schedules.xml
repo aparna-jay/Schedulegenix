@@ -4,11 +4,12 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="wrap_content"
+    android:background="@drawable/w8"
     tools:context=".DisplaySchedules">
+
     <RelativeLayout
         android:layout_width="match_parent"
-        android:layout_height="480dp"
-        >
+        android:layout_height="480dp">
 
         <TextView
             android:id="@+id/textView1"
@@ -18,7 +19,9 @@
             android:layout_alignParentLeft="true"
             android:layout_marginLeft="32dp"
             android:text="@string/title"
-            android:textAppearance="?android:attr/textAppearanceMedium" />
+            android:textAppearance="?android:attr/textAppearanceMedium"
+            android:textColor="@android:color/black"
+            android:textStyle="bold"/>
 
         <TextView
             android:id="@+id/textView2"
@@ -27,7 +30,9 @@
             android:layout_alignLeft="@+id/textView1"
             android:layout_alignBottom="@+id/editTextDate"
             android:text="@string/date"
-            android:textAppearance="?android:attr/textAppearanceMedium" />
+            android:textAppearance="?android:attr/textAppearanceMedium"
+            android:textColor="@android:color/black"
+            android:textStyle="bold"/>
 
 
         <TextView
@@ -41,7 +46,9 @@
             android:layout_marginTop="163dp"
             android:layout_marginBottom="-1dp"
             android:text="@string/starttime"
-            android:textAppearance="?android:attr/textAppearanceMedium" />
+            android:textAppearance="?android:attr/textAppearanceMedium"
+            android:textColor="@android:color/black"
+            android:textStyle="bold"/>
 
         <TextView
             android:id="@+id/textView4"
@@ -52,7 +59,9 @@
             android:layout_marginLeft="0dp"
             android:layout_marginTop="226dp"
             android:text="@string/endtime"
-            android:textAppearance="?android:attr/textAppearanceMedium" />
+            android:textAppearance="?android:attr/textAppearanceMedium"
+            android:textColor="@android:color/black"
+            android:textStyle="bold"/>
 
         <TextView
             android:id="@+id/textView5"
@@ -63,7 +72,9 @@
             android:layout_marginLeft="0dp"
             android:layout_marginBottom="2dp"
             android:text="@string/venue"
-            android:textAppearance="?android:attr/textAppearanceMedium" />
+            android:textAppearance="?android:attr/textAppearanceMedium"
+            android:textColor="@android:color/black"
+            android:textStyle="bold"/>
 
         <EditText
             android:id="@+id/editTextTitle"
@@ -73,7 +84,9 @@
             android:layout_marginLeft="170dp"
             android:layout_marginTop="5dp"
             android:ems="10"
-            android:inputType="text"></EditText>
+            android:inputType="text"
+            android:textColor="@android:color/black"
+            android:textStyle="bold"></EditText>
 
         <EditText
             android:id="@+id/editTextDate"
@@ -84,7 +97,9 @@
             android:layout_marginLeft="1dp"
             android:layout_marginTop="21dp"
             android:ems="10"
-            android:inputType="text" />
+            android:inputType="text"
+            android:textColor="@android:color/black"
+            android:textStyle="bold"/>
 
         <EditText
             android:id="@+id/editTextStartTime"
@@ -94,7 +109,9 @@
             android:layout_alignRight="@+id/editTextDate"
             android:layout_marginTop="21dp"
             android:ems="10"
-            android:inputType="text" />
+            android:inputType="text"
+            android:textColor="@android:color/black"
+            android:textStyle="bold"/>
 
         <EditText
             android:id="@+id/editTextEndTime"
@@ -104,7 +121,9 @@
             android:layout_alignLeft="@+id/editTextStartTime"
             android:layout_marginTop="21dp"
             android:ems="10"
-            android:inputType="text">
+            android:inputType="text"
+            android:textColor="@android:color/black"
+            android:textStyle="bold">
 
             <requestFocus />
         </EditText>
@@ -117,7 +136,9 @@
             android:layout_alignLeft="@+id/editTextEndTime"
             android:layout_marginTop="21dp"
             android:ems="10"
-            android:inputType="text" />
+            android:inputType="text"
+            android:textColor="@android:color/black"
+            android:textStyle="bold"/>
 
         <Button
             android:id="@+id/button1"
@@ -127,7 +148,7 @@
             android:layout_alignParentBottom="true"
             android:layout_marginLeft="-8dp"
             android:layout_marginBottom="18dp"
-            android:background="@color/shade2"
+            android:background="@color/shade4"
             android:onClick="run"
             android:paddingLeft="25dp"
             android:paddingRight="25dp"

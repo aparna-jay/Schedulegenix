@@ -4,15 +4,17 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:background="@drawable/w11"
     tools:context=".unit_temp">
 
     <TextView
         android:id="@+id/CTempTitle"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="TEMPERATURE"
-        android:textColor="@color/colorPrimary"
+        android:text="Temperature"
+        android:textColor="@color/shade2"
         android:textSize="30sp"
+        android:textStyle="bold"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
@@ -23,14 +25,15 @@
         android:id="@+id/fahr"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="FAHRENHEIT"
+        android:text="Fahrenheit"
         android:textSize="24sp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.113"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.266" />
+        app:layout_constraintVertical_bias="0.266"
+        android:textStyle="bold"/>
 
     <Button
         android:id="@+id/ConvertTocel"
@@ -76,33 +79,36 @@
         app:layout_constraintHorizontal_bias="0.87"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.252" />
+        app:layout_constraintVertical_bias="0.252"
+        android:textStyle="bold"/>
 
     <EditText
         android:id="@+id/InputinCel"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:ems="10"
+        android:inputType="numberDecimal"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.875"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
         app:layout_constraintVertical_bias="0.533"
-        android:inputType="numberDecimal" />
+        android:textStyle="bold"/>
 
     <TextView
         android:id="@+id/Fahrenheit"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="CELSIUS"
+        android:text="Celsius"
         android:textSize="24sp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.104"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.542" />
+        app:layout_constraintVertical_bias="0.542"
+        android:textStyle="bold"/>
 
     <TextView
         android:id="@+id/AnswerInFahr"
@@ -115,7 +121,8 @@
         app:layout_constraintHorizontal_bias="0.427"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.737" />
+        app:layout_constraintVertical_bias="0.737"
+        android:textStyle="bold"/>
 
     <TextView
         android:id="@+id/AnswerInCel"
@@ -128,7 +135,9 @@
         app:layout_constraintHorizontal_bias="0.427"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.464" />
+        app:layout_constraintVertical_bias="0.464"
+        android:textStyle="bold"
+        />
 
 
 </androidx.constraintlayout.widget.ConstraintLayout>
