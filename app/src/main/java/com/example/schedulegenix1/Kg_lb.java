@@ -1,12 +1,8 @@
 package com.example.schedulegenix1;
 
 import androidx.appcompat.app.AppCompatActivity;
-
-import android.content.Intent;
 import android.os.Bundle;
-import android.util.Log;
 import android.view.View;
-import android.widget.Button;
 import android.widget.EditText;
 import android.widget.TextView;
 
@@ -15,7 +11,6 @@ public class Kg_lb extends AppCompatActivity {
     EditText ETn1 , ETn2;
     String kgVal, lbVal;
     TextView answerInlb, answerInkg;
-    Button tolb;
     Double n1, n2;
 
     @Override

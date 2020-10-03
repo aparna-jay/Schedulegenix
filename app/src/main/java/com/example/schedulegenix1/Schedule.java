@@ -16,10 +16,7 @@ import android.widget.ArrayAdapter;
 import android.widget.AdapterView.OnItemClickListener;
 import android.widget.Button;
 import android.widget.ListView;
-
 import java.util.ArrayList;
-import java.util.List;
-import android.os.Bundle;
 
 public class Schedule extends AppCompatActivity {
     public final static String EXTRA_MESSAGE = "MESSAGE";

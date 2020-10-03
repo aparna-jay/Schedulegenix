@@ -1,8 +1,6 @@
 package com.example.schedulegenix1;
 
 import androidx.appcompat.app.AppCompatActivity;
-
-
 import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
@@ -44,7 +42,6 @@ public class MainActivity extends AppCompatActivity {
                 ViewPersonalInformation();
             }
         });
-
         units = findViewById(R.id.UnitConverter);
         units.setOnClickListener(new View.OnClickListener(){
                 @Override
@@ -53,7 +50,6 @@ public class MainActivity extends AppCompatActivity {
                 }
 
                 });
-
         Card = findViewById(R.id.Card);
         Card.setOnClickListener(new View.OnClickListener(){
             @Override
@@ -79,8 +75,6 @@ public class MainActivity extends AppCompatActivity {
         Intent intent = new Intent(MainActivity.this, Contact.class);
         startActivity(intent);
     }
-
-
 
     private void ViewPersonalInformation(){
         Intent intent = new Intent(MainActivity.this, PersonalInfo.class);

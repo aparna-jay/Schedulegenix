@@ -6,7 +6,6 @@ import android.database.Cursor;
 import android.database.DatabaseUtils;
 import android.database.sqlite.SQLiteDatabase;
 import android.database.sqlite.SQLiteOpenHelper;
-
 import java.util.ArrayList;
 import java.util.HashMap;
 
@@ -29,8 +28,6 @@ public class DBHelper extends SQLiteOpenHelper {
     public static final String CONTACT_STORE_COLUMN_ADDRESS = "address";
     public static final String CONTACT_STORE_COLUMN_EMAIL = "email";
 
-
-
     public static final String PERSONAL_TABLE_NAME = "personal";
     public static final String PERSONAL_STORE_COLUMN_ID = "id";
     public static final String PERSONAL_STORE_COLUMN_NAME= "name";
@@ -52,7 +49,6 @@ public class DBHelper extends SQLiteOpenHelper {
 
     private HashMap hp;
 
-
     public DBHelper(Context context) {
         super(context, DATABASE_NAME , null, 1);
     }
@@ -63,12 +59,10 @@ public class DBHelper extends SQLiteOpenHelper {
         db.execSQL(
                 "create table contacts " +
                         "(id integer primary key, name text,phone text,address text, email text)"
-
         );
         db.execSQL(
                 "create table schedules " +
                         "(id integer primary key, title text,date text,starttime text, endtime text,venue text)"
-
         );
         db.execSQL(
                 "create table personal " +
@@ -94,10 +88,10 @@ public class DBHelper extends SQLiteOpenHelper {
         onCreate(db);
 
         db.execSQL("DROP TABLE IF EXISTS card_information");
-
         onCreate(db);
     }
 
+    //IT19123882
     public boolean insertSchedule (String title, String date, String starttime, String endtime,String venue) {
         SQLiteDatabase db = this.getWritableDatabase();
         ContentValues contentValues = new ContentValues();
@@ -110,50 +104,11 @@ public class DBHelper extends SQLiteOpenHelper {
         return true;
 
     }
-
-    public boolean insertContact (String name, String phone, String address, String email) {
-        SQLiteDatabase db = this.getWritableDatabase();
-        ContentValues contentValues = new ContentValues();
-        contentValues.put("name", name);
-        contentValues.put("phone", phone);
-        contentValues.put("address", address);
-        contentValues.put("email",email);
-        db.insert("contacts", null, contentValues);
-        return true;
-    }
-
-    public Cursor getData(int id) {
+    public Cursor getScheduleData(int id) {
         SQLiteDatabase db = this.getReadableDatabase();
-
         Cursor res =  db.rawQuery( "select * from schedules where id="+id+"", null );
-
-
-
         return res;
     }
-    public Cursor getData1(int id) {
-        SQLiteDatabase db = this.getReadableDatabase();
-
-
-
-        Cursor res =  db.rawQuery( "select * from contacts where id="+id+"", null );
-
-        return res;
-
-    }
-
-    public int numberOfRows(){
-        SQLiteDatabase db = this.getReadableDatabase();
-
-        int numRows = (int) DatabaseUtils.queryNumEntries(db, SCHEDULES_TABLE_NAME);
-        return numRows;
-    }
-    public int numberOfRows1(){
-        SQLiteDatabase db = this.getReadableDatabase();
-        int numRows = (int) DatabaseUtils.queryNumEntries(db, CONTACTS_TABLE_NAME);
-        return numRows;
-    }
-
     public boolean updateSchedule (Integer id, String title, String date, String starttime, String endtime,String venue) {
         SQLiteDatabase db = this.getWritableDatabase();
         ContentValues contentValues = new ContentValues();
@@ -165,38 +120,13 @@ public class DBHelper extends SQLiteOpenHelper {
         db.update("schedules", contentValues, "id = ? ", new String[] { Integer.toString(id) } );
         return true;
     }
-
     public Integer deleteSchedule (Integer id) {
         SQLiteDatabase db = this.getWritableDatabase();
         return db.delete("schedules","id = ? ",
                 new String[] { Integer.toString(id) });
-
-
     }
-
-    public boolean updateContact (Integer id, String name, String phone, String address , String email) {
-        SQLiteDatabase db = this.getWritableDatabase();
-        ContentValues contentValues = new ContentValues();
-        contentValues.put("name", name);
-        contentValues.put("phone", phone);
-        contentValues.put("address", address);
-        contentValues.put("email", email);
-        db.update("contacts", contentValues, "id = ? ", new String[] { Integer.toString(id) } );
-        return true;
-    }
-
-    public Integer deleteContact (Integer id) {
-        SQLiteDatabase db = this.getWritableDatabase();
-        return db.delete("contacts",
-                "id = ? ",
-                new String[] { Integer.toString(id) });
-    }
-
-
     public ArrayList<String> getAllSchedules() {
         ArrayList<String> array_list = new ArrayList<String>();
-
-        //hp = new HashMap();
         SQLiteDatabase db = this.getReadableDatabase();
         Cursor res =  db.rawQuery( "select * from schedules", null );
         res.moveToFirst();
@@ -209,11 +139,40 @@ public class DBHelper extends SQLiteOpenHelper {
     }
 
 
-
-
+    //IT19127774
+    public boolean insertContact (String name, String phone, String address, String email) {
+        SQLiteDatabase db = this.getWritableDatabase();
+        ContentValues contentValues = new ContentValues();
+        contentValues.put("name", name);
+        contentValues.put("phone", phone);
+        contentValues.put("address", address);
+        contentValues.put("email",email);
+        db.insert("contacts", null, contentValues);
+        return true;
+    }
+    public Cursor getData1(int id) {
+        SQLiteDatabase db = this.getReadableDatabase();
+        Cursor res =  db.rawQuery( "select * from contacts where id="+id+"", null );
+        return res;
+    }
+    public boolean updateContact (Integer id, String name, String phone, String address , String email) {
+        SQLiteDatabase db = this.getWritableDatabase();
+        ContentValues contentValues = new ContentValues();
+        contentValues.put("name", name);
+        contentValues.put("phone", phone);
+        contentValues.put("address", address);
+        contentValues.put("email", email);
+        db.update("contacts", contentValues, "id = ? ", new String[] { Integer.toString(id) } );
+        return true;
+    }
+    public Integer deleteContact (Integer id) {
+        SQLiteDatabase db = this.getWritableDatabase();
+        return db.delete("contacts",
+                "id = ? ",
+                new String[] { Integer.toString(id) });
+    }
     public ArrayList<String> getAllContacts() {
         ArrayList<String> array_list = new ArrayList<String>();
-        //hp = new HashMap();
         SQLiteDatabase db = this.getReadableDatabase();
         Cursor res =  db.rawQuery( "select * from contacts", null );
         res.moveToFirst();
@@ -225,13 +184,7 @@ public class DBHelper extends SQLiteOpenHelper {
         return array_list;
 }
 
-
-
-
-
-
-
-
+    //Dushi
     public boolean insertPersonal (String name, String birthday, String nic, String bAddress, String bPhoneNum, String mPassportNum, String bloodGroup) {
         SQLiteDatabase db = this.getWritableDatabase();
         ContentValues contentValues = new ContentValues();
@@ -245,19 +198,11 @@ public class DBHelper extends SQLiteOpenHelper {
         db.insert("personal", null, contentValues);
         return true;
     }
-
     public Cursor getPersonalData(int id) {
         SQLiteDatabase db = this.getReadableDatabase();
         Cursor res =  db.rawQuery( "select * from personal where id="+id+"", null );
         return res;
     }
-
-    public int numberOfRows2(){
-        SQLiteDatabase db = this.getReadableDatabase();
-        int numRows = (int) DatabaseUtils.queryNumEntries(db, PERSONAL_TABLE_NAME);
-        return numRows;
-    }
-
     public boolean updatePersonal (Integer id,String name, String birthday , String nic , String bAddress,  String bPhoneNum, String mPassportNum, String bloodGroup) {
         SQLiteDatabase db = this.getWritableDatabase();
         ContentValues contentValues = new ContentValues();
@@ -278,53 +223,8 @@ public class DBHelper extends SQLiteOpenHelper {
                 "id = ? ",
                 new String[] { Integer.toString(id) });
     }
-
-    public boolean insertinformation( String name, String type, String number, String date) {
-        SQLiteDatabase db = this.getWritableDatabase();
-        ContentValues contentValues = new ContentValues();
-        contentValues.put("name", name);
-        contentValues.put("type", type);
-        contentValues.put("number", number);
-        contentValues.put("date", date);
-        db.insert("card_information", null, contentValues);
-        return true;
-    }
-
-    public Cursor getCardData(int id) {
-        SQLiteDatabase db = this.getReadableDatabase();
-        Cursor res =  db.rawQuery( "select * from card_information where id="+id+"", null );
-        return res;
-    }
-
-    public int numberOfCardRows(){
-        SQLiteDatabase db = this.getReadableDatabase();
-        int numRows = (int) DatabaseUtils.queryNumEntries(db, CARD_INFORMATION_TABLE_NAME);
-        return numRows;
-    }
-
-    public boolean updateinformation(Integer id, String name, String type, String number, String date) {
-        SQLiteDatabase db = this.getWritableDatabase();
-        ContentValues contentValues = new ContentValues();
-        contentValues.put("name", name);
-        contentValues.put("type", type);
-        contentValues.put("number", number);
-        contentValues.put("date", date);
-        db.update("card_information", contentValues, "id = ? ", new String[] { Integer.toString(id) } );
-        return true;
-    }
-
-    public Integer deleteInformation (Integer id) {
-        SQLiteDatabase db = this.getWritableDatabase();
-        return db.delete("card_information",
-
-                "id = ? ",
-                new String[] { Integer.toString(id) });
-    }
-
-
     public ArrayList<String> getAllData() {
         ArrayList<String> array_list = new ArrayList<String>();
-        //hp = new HashMap();
         SQLiteDatabase db = this.getReadableDatabase();
         Cursor res =  db.rawQuery( "select * from personal", null );
         res.moveToFirst();
@@ -335,10 +235,42 @@ public class DBHelper extends SQLiteOpenHelper {
         return array_list;
     }
 
+
+    //Piyumi
+    public boolean insertinformation( String name, String type, String number, String date) {
+        SQLiteDatabase db = this.getWritableDatabase();
+        ContentValues contentValues = new ContentValues();
+        contentValues.put("name", name);
+        contentValues.put("type", type);
+        contentValues.put("number", number);
+        contentValues.put("date", date);
+        db.insert("card_information", null, contentValues);
+        return true;
+    }
+    public Cursor getCardData(int id) {
+        SQLiteDatabase db = this.getReadableDatabase();
+        Cursor res =  db.rawQuery( "select * from card_information where id="+id+"", null );
+        return res;
+    }
+    public boolean updateinformation(Integer id, String name, String type, String number, String date) {
+        SQLiteDatabase db = this.getWritableDatabase();
+        ContentValues contentValues = new ContentValues();
+        contentValues.put("name", name);
+        contentValues.put("type", type);
+        contentValues.put("number", number);
+        contentValues.put("date", date);
+        db.update("card_information", contentValues, "id = ? ", new String[] { Integer.toString(id) } );
+        return true;
+    }
+    public Integer deleteInformation (Integer id) {
+        SQLiteDatabase db = this.getWritableDatabase();
+        return db.delete("card_information",
+
+                "id = ? ",
+                new String[] { Integer.toString(id) });
+    }
     public ArrayList<String> getAllInformation() {
         ArrayList<String> array_list = new ArrayList<String>();
-
-        //hp = new HashMap();
         SQLiteDatabase db = this.getReadableDatabase();
         Cursor res =  db.rawQuery( "select * from card_information", null );
         res.moveToFirst();
